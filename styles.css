@@ -42,7 +42,7 @@ header::after {
 }
 
 section.scripts {
-    padding: 50px 10%;
+    padding: 30px 10%;
     display: flex;
     flex-direction: column;
     gap: 40px;
