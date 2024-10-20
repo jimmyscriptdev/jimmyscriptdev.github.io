@@ -1,3 +1,56 @@
-<html>
-<h1>yeeeha</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy's Bash Scripts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Jimmy's Bash Scripts</h1>
+        <p>Explore the world of automation and scripting!</p>
+    </header>
+
+    <section class="scripts">
+        <h2>My Bash Scripts</h2>
+
+        <article class="script">
+            <h3>Script 1: Server Uptime Populator</h3>
+            <p>Description: This script populates Airtable with server information using the `uptime` command.</p>
+            <pre><code>
+#!/bin/bash
+# Script Name: airtable_uptime.sh
+# Creation Date: 2024-10-20
+# Author: Jimmy
+# Description: Populates Airtable with server uptime
+curl -s -X POST https://api.airtable.com/v0/$__DATABASE/$__TABLE \
+-H "Authorization: Bearer $__APIKEY" \
+-H "Content-Type: application/json" \
+--data '{ "records": [ { "fields": { "Name": "$__HOST", "Notes": "$(uptime)" } } ] }'
+            </code></pre>
+        </article>
+
+        <article class="script">
+            <h3>Script 2: System Monitor</h3>
+            <p>Description: Monitors system memory and CPU usage.</p>
+            <pre><code>
+#!/bin/bash
+# Script Name: system_monitor.sh
+# Creation Date: 2024-10-15
+# Author: Jimmy
+# Description: Monitors system memory and CPU usage
+while true; do
+    echo "Memory Usage: $(free -m | awk 'NR==2{printf "%.2f", $3*100/$2 }')%"
+    echo "CPU Load: $(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')%"
+    sleep 5
+done
+            </code></pre>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Jimmy's Coding Studio. All rights reserved.</p>
+    </footer>
+</body>
 </html>
