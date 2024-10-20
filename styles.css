@@ -113,12 +113,21 @@ footer {
     }
 }
 
-a {
-    color: #ddd;
-    text-decoration: none; /* Tar bort understrykningen om du vill */
+a:link {
+  color: #ddd;
 }
 
+/* visited link */
+a:visited {
+  color: #ddd;
+}
+
+/* mouse over link */
 a:hover {
-    color: #ddd; /* Valfri färg när man hovrar över länken */
-    text-decoration: underline; /* Valfri stil för hovring */
+  color: #ddd;
+}
+
+/* selected link */
+a:active {
+  color: #ddd;
 }
