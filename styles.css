@@ -1,63 +1,114 @@
-body {
-    font-family: Arial, sans-serif;
+/* General styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    line-height: 1.6;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background: #0d1b2a;
+    padding: 60px 0;
     text-align: center;
-    padding: 20px;
+    position: relative;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.header-container h1 {
+    font-size: 3rem;
+    color: #00d9ff;
+    text-shadow: 2px 2px 8px #000;
 }
 
-header p {
+.tagline {
     font-size: 1.2rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #00d9ff;
+    margin: 20px auto 0;
+    border-radius: 50px;
 }
 
 section.scripts {
-    margin: 20px;
-    padding: 20px;
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 section.scripts h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-article.script {
-    background-color: white;
-    padding: 20px;
+    font-size: 2.5rem;
+    color: #00d9ff;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
 }
 
-article.script h3 {
-    margin-top: 0;
-    color: #333;
+.script-card {
+    background: #1e3c52;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
-article.script pre {
-    background-color: #f4f4f4;
-    padding: 10px;
+.script-card:hover {
+    transform: translateY(-10px);
+}
+
+.script-card h3 {
+    font-size: 1.8rem;
+    color: #00ffae;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+pre {
+    background: #0d1b2a;
+    padding: 15px;
+    color: #fff;
     border-radius: 5px;
+    font-size: 1rem;
     overflow-x: auto;
+}
+
+pre code {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
+    padding: 20px;
+    background: #0d1b2a;
+    color: #00d9ff;
+    position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    section.scripts {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
 }
