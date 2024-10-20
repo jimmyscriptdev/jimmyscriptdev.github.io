@@ -25,19 +25,6 @@
             </code></pre>
         </article>
 
-        <article class="script-card">
-            <h3>System Monitor</h3>
-            <p class="description">Monitor memory and CPU usage in real time with this efficient loop-based Bash script.</p>
-            <pre><code>
-#!/bin/bash
-# Script: system_monitor.sh
-while true; do
-    echo "Memory Usage: $(free -m | awk 'NR==2{printf "%.2f", $3*100/$2 }')%"
-    echo "CPU Load: $(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')%"
-    sleep 5
-done
-            </code></pre>
-        </article>
     </section>
 
     <footer>
