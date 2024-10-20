@@ -119,6 +119,6 @@ a {
 }
 
 a:hover {
-    color: #bbb; /* Valfri färg när man hovrar över länken */
+    color: #ddd; /* Valfri färg när man hovrar över länken */
     text-decoration: underline; /* Valfri stil för hovring */
 }
