@@ -18,15 +18,10 @@
         <h2>Shell Scripts</h2>
 
         <article class="script-card">
-            <h3>Server Uptime Populator</h3>
+            <h3>REQUEST,POST and PATCH Airtable database</h3>
             <p class="description">Populate Airtable with server information using the <code>uptime</code> command for real-time insights.</p>
             <pre><code>
-#!/bin/bash
-# Script: airtable_uptime.sh
-curl -s -X POST https://api.airtable.com/v0/$__DATABASE/$__TABLE \
--H "Authorization: Bearer $__APIKEY" \
--H "Content-Type: application/json" \
---data '{ "records": [ { "fields": { "Name": "$__HOST", "Notes": "$(uptime)" } } ] }'
+https://raw.githubusercontent.com/jimmyscriptdev/airtable/refs/heads/main/airtable-mvg-monitoring.sh
             </code></pre>
         </article>
 
